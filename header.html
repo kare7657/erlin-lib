@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>標題</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="fontawesome-free-web/css/fontawesome.min.css">
+    <link rel="stylesheet" href="fontawesome-free-web/css/brands.min.css">
+    <link rel="stylesheet" href="fontawesome-free-web/css/solid.min.css">
+    <!-- google font-Noto Sans, Noto Serif -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&family=Noto+Serif+TC:wght@200;400;600&display=swap"
+        rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="scss/style.css">
+
+</head>
+
+<body>
+    <!-- 跳到主要內容區塊 -->
+    <div class="for_accessibility">
+        <a href="#AC" class="go-main" title="跳到主要內容區塊" tabindex="0">跳到主要內容區塊</a>
+    </div>
+    <nav class="navbar">
+        <div class="mainMenu">
+            <a href="#U" id="AU" title="右上方功能區塊" accesskey="U">:::</a>
+            <div class="pc">
+                <div class="container">
+                    <div class="navbar-L">
+                        <a href="index.html">
+                            <h1>二林鎮立圖書館</h1>
+                        </a>
+                    </div>
+                    <div class="navbar-R">
+                        <div class="nav-function">
+                            <a href="search-book.html">
+                                <sapn class="titile">館藏查詢</span>
+                            </a>
+                        </div>
+                        <div class="nav-function">
+                            <a href="new-book.html">
+                                <sapn class="titile">新到館藏</span>
+                            </a>
+                        </div>
+                        <div class="nav-function">
+                            <a href="news.html">
+                                <sapn class="titile">訊息公告</span>
+                            </a>
+                        </div>
+                        <div class="nav-function">
+                            <a href="about.html">
+                                <sapn class="titile">關於我們</span>
+                            </a>
+                        </div>
+                        <div class="nav-function">
+                            <a href="download.html">
+                                <sapn class="titile">表單下載</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile">
+                <div class="menu">
+                    <div class="fas fa-bars">
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="search-book.html">館藏查詢</a></li>
+                        <li><a href="new-book.html">新到館藏</a></li>
+                        <li><a href="news.html">訊息公告</a></li>
+                        <li><a href="about.html">關於我們</a></li>
+                        <li><a href="download.html">表單下載</a></li>
+                    </ul>
+                </div>
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>二林鎮立圖書館</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- mobile-menu -->
+    <script>
+        var fas = document.querySelector(".fas.fa-bars")
+        var navbar_nav = document.querySelector(".nav.navbar-nav")
+        var nav_item = document.querySelector(".nav-item.dropdown")
+        fas.onclick = function () {
+            if (navbar_nav.classList.contains("active-ul")) {
+                navbar_nav.classList.remove("active-ul")
+            } else {
+                navbar_nav.classList.add("active-ul")
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
