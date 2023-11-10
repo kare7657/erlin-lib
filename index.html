@@ -22,7 +22,7 @@
             <div class="container">
                 <h2><i class="fas fa-book"></i>新到館藏</h2>
                 <div class="new-book-gp">
-                    <a class="block" href="book-info.html">
+                    <a class="block" href="book-info.html" title="館藏介紹">
                         <div class="top">
                             <img src="img/book1.jpg" alt="書籍封面">
                         </div>
@@ -34,11 +34,11 @@
                                 <p>類型：商業理財</p>
                                 <p class="ellipsis">作者：少女凱倫（花芸曦）</p>
                                 <p class="ellipsis">出版社：幸福文化</p>
-                                <p>出版年：2022-08-10</p>
+                                <p>出版年：2023-08-10</p>
                             </div>
                         </div>
                     </a>
-                    <a class="block" href="book-info.html">
+                    <a class="block" href="book-info.html" title="館藏介紹">
                         <div class="top">
                             <img src="img/book2.jpg" alt="書籍封面">
                         </div>
@@ -50,11 +50,11 @@
                                 <p>類型：商業理財</p>
                                 <p class="ellipsis">作者：萊恩・霍克 Ryan Hawk</p>
                                 <p class="ellipsis">出版社：星出版</p>
-                                <p>出版年：2022-08-10</p>
+                                <p>出版年：2023-08-10</p>
                             </div>
                         </div>
                     </a>
-                    <a class="block" href="book-info.html">
+                    <a class="block" href="book-info.html" title="館藏介紹">
                         <div class="top">
                             <img src="img/book3.jpg" alt="書籍封面">
                         </div>
@@ -66,11 +66,11 @@
                                 <p>類型：商業理財</p>
                                 <p class="ellipsis">作者：吳明來</p>
                                 <p class="ellipsis">出版社：幸福文化</p>
-                                <p>出版年：2022-08-09</p>
+                                <p>出版年：2023-08-09</p>
                             </div>
                         </div>
                     </a>
-                    <a class="block" href="book-info.html">
+                    <a class="block" href="book-info.html" title="館藏介紹">
                         <div class="top">
                             <img src="img/book4.jpg" alt="書籍封面">
                         </div>
@@ -82,11 +82,11 @@
                                 <p>類型：商業理財</p>
                                 <p class="ellipsis">作者：黃偉祥</p>
                                 <p class="ellipsis">出版社：麥浩斯</p>
-                                <p>出版年：2022-08-06</p>
+                                <p>出版年：2023-08-06</p>
                             </div>
                         </div>
                     </a>
-                    <a class="block" href="book-info.html">
+                    <a class="block" href="book-info.html" title="館藏介紹">
                         <div class="top">
                             <img src="img/noimg.jpg" alt="書籍封面">
                         </div>
@@ -98,14 +98,63 @@
                                 <p>類型：商業理財</p>
                                 <p class="ellipsis">作者：弗雷．達斯特</p>
                                 <p class="ellipsis">出版社：平安文化有限公司</p>
-                                <p>出版年：2022-07-26</p>
+                                <p>出版年：2023-07-26</p>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="w-100 text-end">
-                    <button type="button" onclick="javascript:location.href='book-info.html'">更多</button>
+                    <button type="button" onclick="javascript:location.href='new-book.html'">更多</button>
                 </div>
+            </div>
+        </section>
+        <!-- 訊息公告 -->
+        <section class="news">
+            <div class="container">
+                <h2><i class="fas fa-book"></i>訊息公告</h2>
+                <div class="new list1 active-list">
+                    <div class="list color1">
+                        <span>111-08-05</span>
+                        <a href="news-post.html">
+                            <p><i class="fas fa-thumbtack"></i>首辦借書證，閱讀禮袋帶著走</p>
+                        </a>
+                    </div>
+                    <div class="list white">
+                        <span>111-08-05</span>
+                        <a href="news-post.html">
+                            <p>線上看書也有多元選擇！！讓您借閱免出門，24小時全年不打烊</p>
+                        </a>
+                    </div>
+                    <div class="list color1">
+                        <span>111-08-05</span>
+                        <a href="news-post.html">
+                            <p>歡迎申辦「家庭借閱證」，滿足全家大小的閱讀需求</p>
+                        </a>
+                    </div>
+                    <div class="list white">
+                        <span>111-08-05</span>
+                        <a href="news-post1.html">
+                            <p>彰化縣立圖書館外牆修繕工程7月27日開工，明年3月底完工</p>
+                        </a>
+                    </div>
+                    <div class="list color1">
+                        <span>111-08-05</span>
+                        <a href="news-post.html">
+                            <p>首辦借書證，閱讀禮袋帶著走</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="w-100 text-end">
+                    <button type="button" onclick="javascript:location.href='news.html'">更多</button>
+                </div>
+            </div>
+        </section>
+        <!-- 活動行事曆 -->
+        <section class="content-calendar">
+            <div class="container">
+                <h2><i class="fas fa-book"></i>活動行事曆</h2>
+                <div id="Demo_Calendar" class="fullCalendar"></div>
             </div>
         </section>
     </main>
@@ -125,6 +174,143 @@
             $("#header").load('header.html');
             $("#footer").load("footer.html");
         });
+    </script>
+
+    <!-- fullCalendar v6.1.9 -->
+    <script src="js/index.global.min.js"></script>
+    <script>
+        $(function () {
+            var calendarEl = document.getElementById('Demo_Calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                locale: 'zh-tw',
+                timezone: "Asia/Taiwan",
+                initialView: 'dayGridMonth',
+                titleFormat: { // will produce something like "Tuesday, September 18, 2018"
+                    month: 'long',
+                    year: 'numeric',
+                    day: 'numeric',
+                    // weekday: 'long'
+                },
+                // month: 'long',
+                // hour: 'numeric',
+                // minute: '2-digit',
+                // omitZeroMinute: true,
+                // meridiem: 'narrow',
+                // initialDate: '2021-03-07', //new Date(),//初始化時間
+
+
+                // 標頭顯示-月
+                headerToolbar: {
+                    left: 'prev,next',
+                    center: 'title',
+                    right: 'today'
+                },
+
+                // 工作日設定，非工時有底色遮蔽
+                businessHours: {
+                    // By default, Monday-Friday, 9am-5pm.
+                    // days of week. an array of zero-based day of week integers (0=Sunday)
+                    daysOfWeek: [ 2, 3, 4, 5,6,0],
+                    startTime: '0:00',
+                    endTime: '24:00',
+                },
+                // 遮蔽非當月的日期
+                // showNonCurrentDates:false,
+
+
+                dateClick: function (info) {
+                    alert('Clicked on: ' + info.dateStr + ":" + info.view.type);
+
+                },
+                eventMouseover: function (event, jsEvent, view) {
+
+                },
+                eventMouseEnter: function (event) {
+
+                },
+                eventDidMount: function (info) {
+
+                },
+                eventClick: function (info) {
+                    info.jsEvent.preventDefault();
+                    alert('Event: ' + info.event.title + ":" + info.event.id);
+
+                    if (info.event.url) {
+                        eval(info.event.url);
+                    }
+
+                    // change the border color just for fun
+                    // info.el.style.borderColor = 'red';
+                },
+                // eventTimeFormat: {
+                //   hour: 'numeric',
+                //   minute: '2-digit',
+                //   omitZeroMinute: true,
+                //   meridiem: 'narrow'
+                // },
+                events:
+                    [
+
+                        {
+                            "title": "林老師快樂說故事〜999隻青蛙",
+                            "start": "2023-11-14 14:00:00",
+                            "end": "2023-11-14 16:00:00"
+                        },
+                        {
+                            "title": "【品閱晚美人生】樂齡主題書展",
+                            "start": "2023-11-15",
+                            "end": "2023-11-18",
+                            "color": "#ffcabd",
+                            "textColor": "black",
+                        },
+                        {
+                            "title": "【品閱晚美人生】樂齡主題書展",
+                            "start": "2023-11-30 09:00:00",
+                            "end": "2023-11-30 11:00:00"
+                        },
+                        {
+                            "title": "【多出來的那個人，是誰？】青少年主題書展",
+                            "start": "2023-11-24 14:00:00",
+                            "end": "2023-11-24 16:00:00"
+                        },
+                        {
+                            "title": "「書香彰化-與大師有約」專題講座",
+                            "start": "2023-11-11",
+                            "end": "2023-11-11",
+                            "color": "transparent",
+                            "textColor": "black",
+                        },
+                        {
+                            "title": "「書香彰化-與大師有約」專題講座",
+                            "start": "2023-11-04 09:00:00",
+                            "end": "2023-11-04 10:00:00",
+                        },
+                        // {
+                        //     // 背景色
+                        //     "start": "2023-11-08",
+                        //     "end": "2023-11-10",
+                        //     'display': 'background',
+                        //     'backgroundColor': '#F09C86',
+                        // },
+                        // {
+                        //     // 背景色
+                        //     "start": "2023-11-13",
+                        //     "end": "2023-11-15",
+                        //     'display': 'background',
+                        //     'backgroundColor': '#F09C86',
+                        // },
+
+                    ],
+                eventTimeFormat: { // like '14:30:00'
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    hour12: false,
+                },
+            });
+            calendar.render();
+        });
+
     </script>
 
 </body>

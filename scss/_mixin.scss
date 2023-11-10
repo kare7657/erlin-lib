@@ -49,13 +49,14 @@
         width: 100%;
         max-width: 1140px;
         margin: auto;
-        padding: $p-L 0 $p-XL 0;
+        padding: $p-M 0 $p-M 0;
         @include web-S {
             padding: $p-L;
             max-width: unset;
         }
         @include pad() {
             padding: $p-M;
+            padding-top: $p-S;
         }
         @include mobile-L() {
             padding: $p-S;
@@ -88,6 +89,9 @@
     }
     #AZ {
         color: transparent;
+        position: absolute;
+        left: -10%;
+        top: 0;
         &:focus {
             position: absolute;
             left: 0;
@@ -102,28 +106,28 @@
     }
     h1 {
         font-size: $size-h1;
-        color: $primary-default;
+        color: black;
         padding: 0;
         margin: 0;
         line-height: 1.25;
     }
     h2 {
         font-size: $size-h2;
-        color: $primary-default;
+        color: black;
         padding: 0;
         margin: 0;
         line-height: 1.25;
     }
     h3 {
         font-size: $size-h3;
-        color: $primary-default;
+        color: black;
         padding: 0;
         margin: 0;
         line-height: 1.25;
     }
     h4 {
         font-size: $size-h4;
-        color: $primary-default;
+        color: black;
         padding: 0;
         margin: 0;
         line-height: 1.25;
@@ -141,7 +145,7 @@
         padding: 0;
         margin: 0;
         line-height: 1.5;
-        font-weight: 500;
+        font-weight: normal;
         text-align: justify;
         word-wrap: break-word;
         word-break: break-all;
@@ -206,9 +210,8 @@
         overflow: hidden;
     }
     hr {
-        border-top: 1px solid $primary-tint;
-        margin: 0;
-        margin: auto;
+        border-top: 1px solid $complementary;
+        margin: $m-XS auto;
     }
     //清除預設按鈕樣式
     input[type="button"],
@@ -342,7 +345,6 @@
         -ms-user-select: none;
         user-select: none;
         font-size: $size-h4;
-        line-height: $size-h4 * 1.5;
         display: inline-block;
         padding-left: 40px;
         padding-right: 20px;
@@ -403,7 +405,6 @@
         -ms-user-select: none;
         user-select: none;
         font-size: $size-h4;
-        line-height: $size-h4 * 1.5;
         display: inline-block;
         padding-left: 40px;
         padding-right: 20px;
@@ -553,24 +554,24 @@
             margin-right: $m-S;
         }
     }
-    .bg-green {
+    .bg-color2 {
         background-color: $secondary;
     }
     .btn-outline {
         padding: 4px $p-XS;
         background-color: transparent;
         border: solid 1px $primary-default;
-        font-size: $size-h4;
+        font-size: $size-h5;
         color: $primary-default;
         font-weight: bold;
-        border-radius: 8px;
+        border-radius: 4px;
         @include mobile-L() {
             // width: 100%;
             margin-bottom: $m-XS;
         }
         &:hover {
-            background-color: black;
-            box-shadow: black 0 0 0 1px;
+            background-color: $primary-dark;
+            border: solid 1px $primary-dark;
             color: white;
             transition-duration: 0.5s;
             a {
@@ -865,8 +866,8 @@
     .pagination {
         width: 100%;
         display: flex;
-        justify-content: flex-end;
-        margin-top: $m-M;
+        justify-content: center;
+        margin: $m-M 0;
         white-space: nowrap;
         flex-direction: row;
         @include mobile-L() {
@@ -887,7 +888,6 @@
                     border: solid 1px $primary-tint;
                     margin: -2px;
                     font-size: $size-p;
-                    line-height: $size-p * 3;
                     color: $primary-default;
                     @include mobile-S() {
                         width: 100%;
@@ -898,16 +898,21 @@
                         padding: 5px 10px;
                     }
                     &:hover {
-                        background-color: $primary-tint;
+                        background-color: $primary-table;
+                    }
+                    i {
+                        font-size: $size-p;
+                        color: $primary-default;
+                        margin: 0;
                     }
                 }
                 .active {
                     background-color: $primary-default;
                     color: white;
-                }
-                .fas {
-                    font-size: $size-p;
-                    color: $primary-default;
+                    border: solid 1px $primary-default;
+                    &:hover {
+                        background-color: $primary-default;
+                    }
                 }
             }
         }
@@ -917,9 +922,11 @@
 @mixin navbar {
     .navbar {
         padding: 0;
+        height: 60px;
         .mainMenu {
+            height: inherit;
             .pc {
-                height: 60px;
+                height: inherit;
                 position: fixed;
                 top: 0px;
                 left: 0;
@@ -936,6 +943,7 @@
                     padding: 0;
                     margin: 0;
                     width: 1140px;
+                    height: inherit;
                     display: flex;
                     justify-content: space-between;
                     .navbar-L {
@@ -981,6 +989,9 @@
                                     border-bottom: solid 3px white;
                                 }
                             }
+                            .active {
+                                border-bottom: solid 3px white;
+                            }
                         }
                         .nav-function {
                             position: relative;
@@ -1009,7 +1020,6 @@
                             .title {
                                 margin: 0;
                                 padding: 0;
-                                line-height: $size-h4 * 2.5;
                                 color: white;
                                 &:hover {
                                     color: $primary-tint;
@@ -1120,8 +1130,9 @@
         background-color: white;
         padding: 12px 0;
         margin: 0;
-        position: absolute;
-        top: 130px;
+        // position: absolute;
+        // top: 84px;
+        // padding-top: 0px;
         left: 0;
         @include web-S() {
             padding-left: 32px;
@@ -1177,12 +1188,19 @@
     .footer {
         width: 100%;
         background-color: black;
+        position: relative;
         .container {
             display: flex;
+            @include mobile-L() {
+                flex-wrap: wrap;
+            }
             .contact {
                 width: 80%;
-                h4 {
+                @include mobile-L() {
                     width: 100%;
+                }
+                h4 {
+                    width: initial;
                     color: white;
                     margin-bottom: $m-XS;
                 }
@@ -1218,11 +1236,21 @@
                     .copyright {
                         margin-top: $m-XS;
                     }
+                    a {
+                        color: white;
+                        line-height: 2;
+                        display: inline-block;
+                    }
                 }
             }
             .link {
                 width: 20%;
                 text-align: right;
+                @include mobile-L() {
+                    width: 100%;
+                    text-align: left;
+                    margin-top: $m-S;
+                }
                 i {
                     font-size: $size-h2;
                     color: white;
@@ -1255,10 +1283,10 @@
         //     right: 25px;
         //     bottom: 25px;
         // }
-        @include mobile-L(){
+        @include mobile-L() {
             font-size: $size-p;
-                right: 25px;
-                bottom: 25px;
+            right: 25px;
+            bottom: 25px;
             background-color: rgba($color: $primary-default, $alpha: 0.8);
             color: white;
         }
@@ -1700,7 +1728,6 @@
         h4 {
             width: 100%;
             font-size: $size-h4;
-            line-height: $size-h4 * 1.5;
             margin: 0;
             margin-top: $m-XS;
             @include mobile-L() {
@@ -1743,14 +1770,24 @@
 @mixin new-list {
     .new {
         display: none;
+        margin-top: $m-S;
+        margin-bottom: $m-M;
     }
     .active-list {
         display: block;
     }
     .new-btn {
-        margin-bottom: $m-S;
+        margin: $m-S 0;
+        @include mobile-L() {
+            margin-bottom: 0;
+        }
         button {
+            margin: 0;
             margin-right: $m-XS;
+        }
+        .active-btn {
+            background-color: $primary-default;
+            color: white;
         }
     }
     .list {
@@ -1762,10 +1799,32 @@
             width: 100%;
             flex-wrap: wrap;
         }
+        span {
+            // margin-right: $m-M;
+            width: 15%;
+            color: $primary-default;
+            text-align: center;
+            padding-right: $p-M;
+            @include pad {
+                width: 20%;
+            }
+            @include mobile-L() {
+                width: 100%;
+                margin-bottom: $m-XXS;
+                padding-right: 0;
+                text-align: left;
+            }
+        }
         a {
+            width: 80%;
             color: $text;
             font-size: $size-p;
-            line-height: $size-p * 2;
+            @include pad {
+                width: 80%;
+            }
+            @include mobile-L() {
+                width: 100%;
+            }
 
             i {
                 color: $primary-default;
@@ -1787,22 +1846,16 @@
             font-weight: bold;
         }
     }
-    .blue {
+    .color1 {
         background-color: $primary-table;
     }
-    .green {
+    .color2 {
         background-color: #e9f3d9;
     }
     .white {
         background-color: white;
     }
-    span {
-        margin-right: $p-XXS;
-        @include mobile-L() {
-            width: 100%;
-            margin-bottom: $m-XXS;
-        }
-    }
+
     .info-top {
         margin-top: $m-2L;
         display: flex;

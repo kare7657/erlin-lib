@@ -36,9 +36,9 @@ body {
     @include breadcrumb;
 
     main {
-        padding-top: 80px;
+        padding-top: $p-XXS;
         @include pad {
-            padding-top: 60px;
+            padding-top: 0;
         }
 
         // scroll-indicator
@@ -67,8 +67,107 @@ body {
         h2 {
             color: black;
             i {
-                font-size: $size-h3;
+                font-size: $size-h2;
                 color: $primary-default;
+            }
+        }
+
+        // 活動行事曆
+        .content-calendar {
+            .fullCalendar {
+                margin-top: $m-S;
+            }
+            button {
+                background-color: $primary-default !important;
+                border: solid 1px $primary-default !important;
+            }
+            table {
+                th {
+                    background-color: $primary-default;
+                    .fc-col-header-cell-cushion {
+                        color: white;
+                    }
+                }
+                td {
+                    background-color: white;
+                    .fc-daygrid-dot-event {
+                        align-items: baseline;
+                    }
+                    .fc-daygrid-event {
+                        white-space: wrap;
+                    }
+                    .fc-daygrid-dot-event .fc-event-title,
+                    .fc-h-event .fc-event-title {
+                        text-align: left !important;
+                        // ellipsis-lineClamp
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2; /*行數*/
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                    }
+                    .fc .fc-daygrid-day-top {
+                        flex-direction: row;
+                    }
+                    a {
+                        color: black;
+                        cursor: pointer;
+                    }
+                    .fc-daygrid-day-number {
+                        color: $text;
+                    }
+                }
+            }
+            @include mobile-L {
+                /* calendar - month */
+                .fc-toolbar-chunk:nth-child(2) {
+                    font-size: $size-caption;
+                    margin: 0 $p-XXS;
+                }
+                .fc-toolbar-chunk:nth-child(3) {
+                    text-align: right;
+                }
+                // .fc-header-toolbar {
+                //     display: flex;
+                //     justify-content: space-between;
+                //     // align-items: center;
+                //     flex-wrap: wrap;
+                //     // flex-direction: row;
+                // }
+                // .fc-toolbar-chunk:nth-child(2) {
+                //     font-size: $size-p;
+                //     margin: 0 $p-XS;
+                // }
+                // .fc-toolbar-chunk:nth-child(3) {
+                //     width: 100%;
+                //     text-align: right;
+                // }
+                .fc-toolbar-title {
+                    width: 100%;
+                    margin: $m-XS 0;
+                }
+                .fc-daygrid-dot-event {
+                    flex-wrap: wrap;
+                }
+                .fc-view-harness {
+                    margin-bottom: 40px;
+                    height: 500px !important;
+                }
+                .fc-daygrid {
+                    overflow: auto;
+                }
+                /* 預設scrollar */
+                .fc-daygrid .fc-scroller.fc-scroller-liquid-absolute {
+                    position: relative;
+                }
+                .fc-daygrid table.fc-scrollgrid {
+                    width: auto;
+                    min-height: 510px;
+                }
+                /* tbody */
+                .fc-daygrid .fc-scrollgrid th,
+                .fc-daygrid .fc-scrollgrid td {
+                    width: 100px;
+                }
             }
         }
         // 新到館藏
@@ -78,7 +177,7 @@ body {
                 display: flex;
                 justify-content: space-between;
                 flex-wrap: wrap;
-                @include pad{
+                @include pad {
                     justify-content: start;
                 }
                 @include mobile-L {
@@ -87,7 +186,7 @@ body {
                 .block {
                     width: 20%;
                     padding: $p-XS;
-                    @include pad{
+                    @include pad {
                         width: 33%;
                     }
                     @include mobile-L {
@@ -96,11 +195,15 @@ body {
                     }
                     .top {
                         margin-bottom: $m-XS;
-                        img {
-                            object-fit: contain;
-                            width: 100%;
-                            height: 100%;
-                            max-height: 220px;
+                        a{
+                            display: block;
+                            img {
+                                object-fit: cover;
+                                width: 100%;
+                                height: 100%;
+                                max-height: 220px;
+                                background-color: $complementary;
+                            }
                         }
                     }
                     .bottom {
@@ -109,6 +212,53 @@ body {
                             color: $text;
                             font-weight: bold;
                             margin-bottom: $p-XXS;
+                            font-size: $size-p;
+                        }
+                    }
+                }
+            }
+        }
+        // 訊息公告
+        .content-news {
+            .post-gp {
+                margin-top: $m-XS;
+                display: flex;
+                .icon-gp {
+                    display: flex;
+                    align-items: center;
+                    margin-right: $m-S;
+                    i {
+                        color: $complementary;
+                        font-weight: normal;
+                    }
+                    p {
+                        color: $text;
+                    }
+                }
+            }
+            hr {
+                margin-bottom: $m-S;
+            }
+            .text-gp {
+                margin-bottom: $m-M;
+                p {
+                    line-height: 1.75;
+                    margin-bottom: $m-S;
+                    // a{
+                    //     display: inline-block;
+                    // }
+                }
+                h3 {
+                    margin-bottom: $p-XXS;
+                }
+                ul {
+                    padding-left: 0;
+                    li {
+                        list-style-type: none;
+                        a {
+                            // display: inline-block;
+                            line-height: 2;
+                            // width: auto !important;
                         }
                     }
                 }
@@ -120,26 +270,25 @@ body {
             flex-wrap: wrap;
             margin-top: $m-XS;
             .block {
-                width: 31%;
+                width: 25%;
                 margin: 0;
                 padding: 0;
-                margin-right: $m-S;
                 margin-bottom: $m-S;
                 @include pad {
-                    width: 47%;
+                    width: 33.3%;
                 }
                 @include mobile-L {
-                    width: 100%;
-                    margin: 0;
+                    width: 50%;
                     margin-bottom: $m-XS;
                 }
                 a {
                     img {
-                        width: 100%;
-                        aspect-ratio: 16 / 9;
-                        object-fit: cover;
+                        width: 95%;
+                        aspect-ratio: 4 / 3;
+                        object-fit: contain;
                         object-position: center;
                         margin: 0;
+                        background-color: $complementary;
                     }
                 }
                 .title {
@@ -151,6 +300,19 @@ body {
                     color: black;
                 }
             }
+        }
+    }
+    // 彈出燈箱不在main架構裡
+    // .lightboxOverlay:focus{
+    //     border: unset !important;
+    // }
+    .lightbox {
+        &:focus {
+            outline: unset !important;
+        }
+        .lb-nav a.lb-prev,
+        .lb-nav a.lb-next {
+            width: 15%;
         }
     }
 }

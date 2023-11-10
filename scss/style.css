@@ -10,7 +10,7 @@
   width: 100%;
   max-width: 1140px;
   margin: auto;
-  padding: 40px 0 56px 0;
+  padding: 32px 0 32px 0;
 }
 @media (max-width: 1024px) {
   * .container {
@@ -21,6 +21,7 @@
 @media (max-width: 768px) {
   * .container {
     padding: 32px;
+    padding-top: 24px;
   }
 }
 @media (max-width: 568px) {
@@ -54,6 +55,9 @@
 }
 * #AZ {
   color: transparent;
+  position: absolute;
+  left: -10%;
+  top: 0;
 }
 * #AZ:focus {
   position: absolute;
@@ -65,28 +69,28 @@
 }
 * h1 {
   font-size: 1.875rem;
-  color: #C53C18;
+  color: black;
   padding: 0;
   margin: 0;
   line-height: 1.25;
 }
 * h2 {
   font-size: 1.75rem;
-  color: #C53C18;
+  color: black;
   padding: 0;
   margin: 0;
   line-height: 1.25;
 }
 * h3 {
   font-size: 1.5rem;
-  color: #C53C18;
+  color: black;
   padding: 0;
   margin: 0;
   line-height: 1.25;
 }
 * h4 {
   font-size: 1.375rem;
-  color: #C53C18;
+  color: black;
   padding: 0;
   margin: 0;
   line-height: 1.25;
@@ -104,7 +108,7 @@
   padding: 0;
   margin: 0;
   line-height: 1.5;
-  font-weight: 500;
+  font-weight: normal;
   text-align: justify;
   word-wrap: break-word;
   word-break: break-all;
@@ -163,9 +167,8 @@
   overflow: hidden;
 }
 * hr {
-  border-top: 1px solid #F09C86;
-  margin: 0;
-  margin: auto;
+  border-top: 1px solid #8F8F8F;
+  margin: 12px auto;
 }
 * input[type=button],
 * select {
@@ -299,7 +302,6 @@
   -moz-user-select: none;
   user-select: none;
   font-size: 1.375rem;
-  line-height: 2.0625rem;
   display: inline-block;
   padding-left: 40px;
   padding-right: 20px;
@@ -358,7 +360,6 @@
   -moz-user-select: none;
   user-select: none;
   font-size: 1.375rem;
-  line-height: 2.0625rem;
   display: inline-block;
   padding-left: 40px;
   padding-right: 20px;
@@ -497,17 +498,17 @@
 * button .fas {
   margin-right: 20px;
 }
-* .bg-green {
-  background-color: #90c541;
+* .bg-color2 {
+  background-color: #E9C65D;
 }
 * .btn-outline {
   padding: 4px 16px;
   background-color: transparent;
   border: solid 1px #C53C18;
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   color: #C53C18;
   font-weight: bold;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 @media (max-width: 568px) {
   * .btn-outline {
@@ -515,8 +516,8 @@
   }
 }
 * .btn-outline:hover {
-  background-color: black;
-  box-shadow: black 0 0 0 1px;
+  background-color: #75240F;
+  border: solid 1px #75240F;
   color: white;
   transition-duration: 0.5s;
 }
@@ -830,8 +831,8 @@
 * .pagination {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
-  margin-top: 36px;
+  justify-content: center;
+  margin: 36px 0;
   white-space: nowrap;
   flex-direction: row;
 }
@@ -857,7 +858,6 @@
   border: solid 1px #F09C86;
   margin: -2px;
   font-size: 1rem;
-  line-height: 3rem;
   color: #C53C18;
 }
 @media (max-width: 375px) {
@@ -873,15 +873,20 @@
   }
 }
 * .pagination ul li a:hover {
-  background-color: #F09C86;
+  background-color: #FCF4F1;
+}
+* .pagination ul li a i {
+  font-size: 1rem;
+  color: #C53C18;
+  margin: 0;
 }
 * .pagination ul li .active {
   background-color: #C53C18;
   color: white;
+  border: solid 1px #C53C18;
 }
-* .pagination ul li .fas {
-  font-size: 1rem;
-  color: #C53C18;
+* .pagination ul li .active:hover {
+  background-color: #C53C18;
 }
 
 body.modal-open {
@@ -909,9 +914,13 @@ body {
 }
 body .navbar {
   padding: 0;
+  height: 60px;
+}
+body .navbar .mainMenu {
+  height: inherit;
 }
 body .navbar .mainMenu .pc {
-  height: 60px;
+  height: inherit;
   position: fixed;
   top: 0px;
   left: 0;
@@ -930,6 +939,7 @@ body .navbar .mainMenu .pc .container {
   padding: 0;
   margin: 0;
   width: 1140px;
+  height: inherit;
   display: flex;
   justify-content: space-between;
 }
@@ -980,6 +990,9 @@ body .navbar .mainMenu .pc .container .navbar-R a .titile {
 body .navbar .mainMenu .pc .container .navbar-R a .titile:hover {
   border-bottom: solid 3px white;
 }
+body .navbar .mainMenu .pc .container .navbar-R a .active {
+  border-bottom: solid 3px white;
+}
 body .navbar .mainMenu .pc .container .navbar-R .nav-function {
   position: relative;
   padding: 0 24px;
@@ -1005,7 +1018,6 @@ body .navbar .mainMenu .pc .container .navbar-R .nav-list {
 body .navbar .mainMenu .pc .container .navbar-R .nav-list .title {
   margin: 0;
   padding: 0;
-  line-height: 3.4375rem;
   color: white;
 }
 body .navbar .mainMenu .pc .container .navbar-R .nav-list .title:hover {
@@ -1105,15 +1117,26 @@ body .navbar .mainMenu .mobile .logo h1 {
 body .footer {
   width: 100%;
   background-color: black;
+  position: relative;
 }
 body .footer .container {
   display: flex;
 }
+@media (max-width: 568px) {
+  body .footer .container {
+    flex-wrap: wrap;
+  }
+}
 body .footer .container .contact {
   width: 80%;
 }
+@media (max-width: 568px) {
+  body .footer .container .contact {
+    width: 100%;
+  }
+}
 body .footer .container .contact h4 {
-  width: 100%;
+  width: initial;
   color: white;
   margin-bottom: 12px;
 }
@@ -1149,9 +1172,21 @@ body .footer .container .contact .text-gp p {
 body .footer .container .contact .text-gp .copyright {
   margin-top: 12px;
 }
+body .footer .container .contact .text-gp a {
+  color: white;
+  line-height: 2;
+  display: inline-block;
+}
 body .footer .container .link {
   width: 20%;
   text-align: right;
+}
+@media (max-width: 568px) {
+  body .footer .container .link {
+    width: 100%;
+    text-align: left;
+    margin-top: 20px;
+  }
 }
 body .footer .container .link i {
   font-size: 1.75rem;
@@ -1372,15 +1407,27 @@ body div.mb-separate [role=row] [role=cloumheader] {
 }
 body .new {
   display: none;
+  margin-top: 20px;
+  margin-bottom: 36px;
 }
 body .active-list {
   display: block;
 }
 body .new-btn {
-  margin-bottom: 20px;
+  margin: 20px 0;
+}
+@media (max-width: 568px) {
+  body .new-btn {
+    margin-bottom: 0;
+  }
 }
 body .new-btn button {
+  margin: 0;
   margin-right: 12px;
+}
+body .new-btn .active-btn {
+  background-color: #C53C18;
+  color: white;
 }
 body .list {
   display: flex;
@@ -1394,10 +1441,39 @@ body .list {
     flex-wrap: wrap;
   }
 }
+body .list span {
+  width: 15%;
+  color: #C53C18;
+  text-align: center;
+  padding-right: 32px;
+}
+@media (max-width: 768px) {
+  body .list span {
+    width: 20%;
+  }
+}
+@media (max-width: 568px) {
+  body .list span {
+    width: 100%;
+    margin-bottom: 4px;
+    padding-right: 0;
+    text-align: left;
+  }
+}
 body .list a {
+  width: 80%;
   color: #595757;
   font-size: 1rem;
-  line-height: 2rem;
+}
+@media (max-width: 768px) {
+  body .list a {
+    width: 80%;
+  }
+}
+@media (max-width: 568px) {
+  body .list a {
+    width: 100%;
+  }
 }
 body .list a i {
   color: #C53C18;
@@ -1419,23 +1495,14 @@ body .head p {
   color: white;
   font-weight: bold;
 }
-body .blue {
+body .color1 {
   background-color: #FCF4F1;
 }
-body .green {
+body .color2 {
   background-color: #e9f3d9;
 }
 body .white {
   background-color: white;
-}
-body span {
-  margin-right: 8px;
-}
-@media (max-width: 568px) {
-  body span {
-    width: 100%;
-    margin-bottom: 4px;
-  }
 }
 body .info-top {
   margin-top: 60px;
@@ -1544,8 +1611,6 @@ body .breadcrumb {
   background-color: white;
   padding: 12px 0;
   margin: 0;
-  position: absolute;
-  top: 130px;
   left: 0;
 }
 @media (max-width: 1024px) {
@@ -1603,11 +1668,11 @@ body .breadcrumb .container ul span {
   color: black;
 }
 body main {
-  padding-top: 80px;
+  padding-top: 8px;
 }
 @media (max-width: 768px) {
   body main {
-    padding-top: 60px;
+    padding-top: 0;
   }
 }
 body main .scroll-indicator-gp {
@@ -1640,8 +1705,87 @@ body main h2 {
   color: black;
 }
 body main h2 i {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: #C53C18;
+}
+body main .content-calendar .fullCalendar {
+  margin-top: 20px;
+}
+body main .content-calendar button {
+  background-color: #C53C18 !important;
+  border: solid 1px #C53C18 !important;
+}
+body main .content-calendar table th {
+  background-color: #C53C18;
+}
+body main .content-calendar table th .fc-col-header-cell-cushion {
+  color: white;
+}
+body main .content-calendar table td {
+  background-color: white;
+}
+body main .content-calendar table td .fc-daygrid-dot-event {
+  align-items: baseline;
+}
+body main .content-calendar table td .fc-daygrid-event {
+  white-space: wrap;
+}
+body main .content-calendar table td .fc-daygrid-dot-event .fc-event-title,
+body main .content-calendar table td .fc-h-event .fc-event-title {
+  text-align: left !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /*行數*/
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+body main .content-calendar table td .fc .fc-daygrid-day-top {
+  flex-direction: row;
+}
+body main .content-calendar table td a {
+  color: black;
+  cursor: pointer;
+}
+body main .content-calendar table td .fc-daygrid-day-number {
+  color: #595757;
+}
+@media (max-width: 568px) {
+  body main .content-calendar {
+    /* calendar - month */
+    /* 預設scrollar */
+    /* tbody */
+  }
+  body main .content-calendar .fc-toolbar-chunk:nth-child(2) {
+    font-size: 0.875rem;
+    margin: 0 8px;
+  }
+  body main .content-calendar .fc-toolbar-chunk:nth-child(3) {
+    text-align: right;
+  }
+  body main .content-calendar .fc-toolbar-title {
+    width: 100%;
+    margin: 12px 0;
+  }
+  body main .content-calendar .fc-daygrid-dot-event {
+    flex-wrap: wrap;
+  }
+  body main .content-calendar .fc-view-harness {
+    margin-bottom: 40px;
+    height: 500px !important;
+  }
+  body main .content-calendar .fc-daygrid {
+    overflow: auto;
+  }
+  body main .content-calendar .fc-daygrid .fc-scroller.fc-scroller-liquid-absolute {
+    position: relative;
+  }
+  body main .content-calendar .fc-daygrid table.fc-scrollgrid {
+    width: auto;
+    min-height: 510px;
+  }
+  body main .content-calendar .fc-daygrid .fc-scrollgrid th,
+  body main .content-calendar .fc-daygrid .fc-scrollgrid td {
+    width: 100px;
+  }
 }
 body main .content-newbook .new-book-gp {
   margin: 12px 0;
@@ -1677,17 +1821,60 @@ body main .content-newbook .new-book-gp .block {
 body main .content-newbook .new-book-gp .block .top {
   margin-bottom: 12px;
 }
-body main .content-newbook .new-book-gp .block .top img {
-  -o-object-fit: contain;
-     object-fit: contain;
+body main .content-newbook .new-book-gp .block .top a {
+  display: block;
+}
+body main .content-newbook .new-book-gp .block .top a img {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 100%;
   max-height: 220px;
+  background-color: #8F8F8F;
 }
 body main .content-newbook .new-book-gp .block .bottom .title {
   color: #595757;
   font-weight: bold;
   margin-bottom: 8px;
+  font-size: 1rem;
+}
+body main .content-news .post-gp {
+  margin-top: 12px;
+  display: flex;
+}
+body main .content-news .post-gp .icon-gp {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+body main .content-news .post-gp .icon-gp i {
+  color: #8F8F8F;
+  font-weight: normal;
+}
+body main .content-news .post-gp .icon-gp p {
+  color: #595757;
+}
+body main .content-news hr {
+  margin-bottom: 20px;
+}
+body main .content-news .text-gp {
+  margin-bottom: 36px;
+}
+body main .content-news .text-gp p {
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+body main .content-news .text-gp h3 {
+  margin-bottom: 8px;
+}
+body main .content-news .text-gp ul {
+  padding-left: 0;
+}
+body main .content-news .text-gp ul li {
+  list-style-type: none;
+}
+body main .content-news .text-gp ul li a {
+  line-height: 2;
 }
 body main .section-lightbox {
   display: flex;
@@ -1695,32 +1882,31 @@ body main .section-lightbox {
   margin-top: 12px;
 }
 body main .section-lightbox .block {
-  width: 31%;
+  width: 25%;
   margin: 0;
   padding: 0;
-  margin-right: 20px;
   margin-bottom: 20px;
 }
 @media (max-width: 768px) {
   body main .section-lightbox .block {
-    width: 47%;
+    width: 33.3%;
   }
 }
 @media (max-width: 568px) {
   body main .section-lightbox .block {
-    width: 100%;
-    margin: 0;
+    width: 50%;
     margin-bottom: 12px;
   }
 }
 body main .section-lightbox .block a img {
-  width: 100%;
-  aspect-ratio: 16/9;
-  -o-object-fit: cover;
-     object-fit: cover;
+  width: 95%;
+  aspect-ratio: 4/3;
+  -o-object-fit: contain;
+     object-fit: contain;
   -o-object-position: center;
      object-position: center;
   margin: 0;
+  background-color: #8F8F8F;
 }
 body main .section-lightbox .block .title {
   font-size: 1.25rem;
@@ -1729,4 +1915,11 @@ body main .section-lightbox .block .title {
   margin-top: 8px;
   line-height: 1.5;
   color: black;
+}
+body .lightbox:focus {
+  outline: unset !important;
+}
+body .lightbox .lb-nav a.lb-prev,
+body .lightbox .lb-nav a.lb-next {
+  width: 15%;
 }/*# sourceMappingURL=style.css.map */
