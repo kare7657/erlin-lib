@@ -213,6 +213,10 @@
         border-top: 1px solid $complementary;
         margin: $m-XS auto;
     }
+    ::selection {
+        color: white;
+        background-color: $primary-dark;
+    }
     //清除預設按鈕樣式
     input[type="button"],
     select {
@@ -264,7 +268,7 @@
             color: $primary-default;
             font-size: $size-h4;
             font-weight: bold;
-            padding: 0;
+            padding: 0 $p-S;
             text-decoration: none;
             margin: $m-XS 0;
             cursor: pointer;

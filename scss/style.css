@@ -170,6 +170,14 @@
   border-top: 1px solid #8F8F8F;
   margin: 12px auto;
 }
+* ::-moz-selection {
+  color: white;
+  background-color: #75240F;
+}
+* ::selection {
+  color: white;
+  background-color: #75240F;
+}
 * input[type=button],
 * select {
   -webkit-appearance: none; /* Safari & Chrome */
@@ -220,7 +228,7 @@
   color: #C53C18;
   font-size: 1.375rem;
   font-weight: bold;
-  padding: 0;
+  padding: 0 24px;
   text-decoration: none;
   margin: 12px 0;
   cursor: pointer;
@@ -1801,6 +1809,7 @@ body main .content-newbook .new-book-gp {
 @media (max-width: 568px) {
   body main .content-newbook .new-book-gp {
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 }
 body main .content-newbook .new-book-gp .block {
@@ -1814,23 +1823,23 @@ body main .content-newbook .new-book-gp .block {
 }
 @media (max-width: 568px) {
   body main .content-newbook .new-book-gp .block {
-    width: 50%;
-    padding-bottom: 0;
+    width: 48%;
+    padding: 0;
+    margin-bottom: 20px;
   }
 }
 body main .content-newbook .new-book-gp .block .top {
   margin-bottom: 12px;
-}
-body main .content-newbook .new-book-gp .block .top a {
+  width: 100%;
   display: block;
+  text-align: center;
 }
-body main .content-newbook .new-book-gp .block .top a img {
+body main .content-newbook .new-book-gp .block .top img {
   -o-object-fit: cover;
      object-fit: cover;
-  width: 100%;
-  height: 100%;
+  width: 85%;
+  height: 85%;
   max-height: 220px;
-  background-color: #8F8F8F;
 }
 body main .content-newbook .new-book-gp .block .bottom .title {
   color: #595757;
@@ -1862,19 +1871,92 @@ body main .content-news .text-gp {
 }
 body main .content-news .text-gp p {
   line-height: 1.75;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 body main .content-news .text-gp h3 {
   margin-bottom: 8px;
 }
 body main .content-news .text-gp ul {
   padding-left: 0;
+  list-style-position: inside;
 }
 body main .content-news .text-gp ul li {
+  color: #595757;
+  line-height: 1.75;
+}
+body main .content-news .text-gp ul.file-gp {
+  padding-left: 0;
+}
+body main .content-news .text-gp ul.file-gp li {
   list-style-type: none;
 }
-body main .content-news .text-gp ul li a {
+body main .content-news .text-gp ul.file-gp li a {
   line-height: 2;
+}
+body main .content-news .info-gp {
+  display: flex;
+  margin: 48px 0;
+}
+@media (max-width: 568px) {
+  body main .content-news .info-gp {
+    flex-wrap: wrap;
+    margin: 36px 0;
+  }
+}
+body main .content-news .info-gp .left {
+  width: 25%;
+}
+@media (max-width: 1024px) {
+  body main .content-news .info-gp .left {
+    width: 30%;
+  }
+}
+@media (max-width: 768px) {
+  body main .content-news .info-gp .left {
+    width: 40%;
+  }
+}
+@media (max-width: 568px) {
+  body main .content-news .info-gp .left {
+    width: 100%;
+  }
+}
+body main .content-news .info-gp .left img {
+  width: 100%;
+  height: 100%;
+  max-height: 220px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media (max-width: 568px) {
+  body main .content-news .info-gp .left img {
+    margin-bottom: 20px;
+  }
+}
+body main .content-news .info-gp .right {
+  padding-left: 16px;
+}
+@media (max-width: 768px) {
+  body main .content-news .info-gp .right {
+    padding-left: 32px;
+  }
+}
+@media (max-width: 568px) {
+  body main .content-news .info-gp .right {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+body main .content-news .info-gp .right .title {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+body main .content-news .info-gp .right .text-gp {
+  margin-bottom: 0;
+}
+body main .content-news .info-gp .right .text-gp p {
+  line-height: 1.75;
+  margin-bottom: 0;
 }
 body main .section-lightbox {
   display: flex;
@@ -1915,6 +1997,29 @@ body main .section-lightbox .block .title {
   margin-top: 8px;
   line-height: 1.5;
   color: black;
+}
+body main .content-search-book .form {
+  background-color: #FCF4F1;
+  padding: 40px 64px;
+  border-radius: 12px;
+  margin: 36px 0;
+}
+body main .content-search-book .form .form-gp {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+body main .content-search-book .form .form-gp label {
+  width: 20%;
+}
+body main .content-search-book .form .form-gp input {
+  width: 80%;
+}
+body main .content-search-book .form .btn-tool {
+  text-align: center;
+}
+body main .content-search-book .form .btn-tool input {
+  margin: 0 4px;
 }
 body .lightbox:focus {
   outline: unset !important;
