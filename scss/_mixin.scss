@@ -160,7 +160,7 @@
         // }
     }
     .notice {
-        color: $notice;
+        color: $notice !important;
     }
     i {
         margin-right: $p-XXS;
@@ -224,17 +224,25 @@
         -moz-appearance: none; /* FireFox */
         appearance: none;
     }
+    // 隱藏number箭頭
+    /* Chrome, Safari, Edge, Opera */
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
     //表單
     input {
         // width: 100%;
         display: inline-block;
         width: initial;
         height: 40px;
+        line-height: 40px;
         border-radius: 8px;
         border: solid 1px $complementary;
         background-color: white;
         color: $text;
-        padding: 0 $p-XS;
+        padding: 0 $p-XXS;
         font-size: $size-p;
         line-height: 1.5;
         &[type="submit"],
@@ -242,18 +250,16 @@
             display: inline-block;
             width: initial;
             padding: 0 $p-S;
-            height: 40px;
             background-color: $primary-default;
             color: white;
-            font-size: $size-h4;
+            font-size: $size-h5;
             font-weight: bold;
-            line-height: 40px;
             border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             text-decoration: none;
             cursor: pointer;
             &:hover {
-                background-color: black;
+                background-color: $primary-dark;
             }
             @include mobile-L() {
                 width: 100%;
@@ -262,15 +268,14 @@
         &[type="button"] {
             display: inline-block;
             width: initial;
-            background-color: transparent;
-            border: solid 1px $primary-default;
-            border-radius: 8px;
-            color: $primary-default;
-            font-size: $size-h4;
+            background-color: $primary-default;
+            // border: solid 1px $primary-default;
+            border-radius: 6px;
+            color: white;
+            font-size: $size-h5;
             font-weight: bold;
             padding: 0 $p-S;
             text-decoration: none;
-            margin: $m-XS 0;
             cursor: pointer;
             &:hover {
                 background-color: black;
@@ -536,14 +541,15 @@
 
     //按鈕
     button {
-        padding: 5px $p-XS;
+        padding: 0 $p-XS;
         background-color: $primary-default;
-        border-radius: 4px;
+        border-radius: 6px;
         border: none;
         font-size: $size-h5;
         color: white;
         font-weight: bold;
         cursor: pointer;
+        min-height: 40px;
         &:hover {
             background-color: black;
             transition-duration: 0.5s;
@@ -562,21 +568,22 @@
         background-color: $secondary;
     }
     .btn-outline {
-        padding: 4px $p-XS;
-        background-color: transparent;
-        border: solid 1px $primary-default;
+        padding: 0 $p-XS;
+        background-color: transparent !important;
+        border: solid 1px $primary-default !important;
         font-size: $size-h5;
-        color: $primary-default;
+        color: $primary-default !important;
         font-weight: bold;
-        border-radius: 4px;
+        border-radius: 6px;
+        margin: 0;
         @include mobile-L() {
             // width: 100%;
             margin-bottom: $m-XS;
         }
         &:hover {
-            background-color: $primary-dark;
-            border: solid 1px $primary-dark;
-            color: white;
+            background-color: $primary-dark !important;
+            border: solid 1px $primary-dark !important;
+            color: white !important;
             transition-duration: 0.5s;
             a {
                 color: white !important;
@@ -1790,8 +1797,8 @@
             margin-right: $m-XS;
         }
         .active-btn {
-            background-color: $primary-default;
-            color: white;
+            background-color: $primary-default !important;
+            color: white !important;
         }
     }
     .list {
@@ -1952,22 +1959,26 @@
 }
 
 @mixin table {
-    table {
+    .table-default {
         border-collapse: collapse;
         width: 100%;
         table-layout: auto;
         th,
         td {
-            border: 1px solid $primary-tint;
-            padding: $p-XXS $p-XXS;
+            // border: 1px solid $primary-tint;
+            padding: $p-XS;
             text-align: center;
         }
         tr {
             &:nth-child(even) {
                 background-color: rgba($color: $primary-tint, $alpha: 0.1);
             }
+            @include mobile-L() {
+                border: solid 1px $primary-tint;
+            }
             th {
-                background-color: rgba($color: $primary-tint, $alpha: 0.5);
+                background-color: rgba($color: $primary-default, $alpha: 1);
+                color: white;
                 text-align: center;
                 @include mobile-L {
                     &:nth-child(1) {
@@ -2013,7 +2024,8 @@
                 }
             }
             th {
-                background-color: rgba($color: $primary-tint, $alpha: 0.5);
+                background-color: rgba($color: $primary-default, $alpha: 1);
+                color: white;
                 text-align: center;
             }
             td {

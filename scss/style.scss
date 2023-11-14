@@ -28,7 +28,7 @@ body {
     @include navbar;
     @include footer;
     @include back-top;
-    // @include form;
+    @include form;
     // @include form-apply;
     @include table;
     @include div-table;
@@ -367,23 +367,53 @@ body {
                 background-color: $primary-table;
                 padding: $p-L $p-2L;
                 border-radius: 12px;
-                margin: $m-M 0;
+                margin-top: $m-S;
+                margin-bottom: $m-M;
+                @include mobile-L{
+                    padding: $p-S;
+                }
                 .form-gp {
                     display: flex;
                     align-items: center;
                     margin-bottom: $m-XS;
                     label {
                         width: 20%;
+                        @include mobile-L{
+                            width: 100%;
+                        }
                     }
                     input {
                         width: 80%;
+                        @include mobile-L{
+                            width: 100%;
+                        }
                     }
                 }
-                .btn-tool{
+                .btn-tool {
                     text-align: center;
-                    input{
-                        margin: 0 $m-XXS;
+                    @include mobile-L{
+                        margin-top: $m-S;
+                        display: flex;
+                        justify-content: space-between;
                     }
+                    input {
+                        margin: 0 $m-XXS;
+                        @include mobile-L{
+                            width: 47%;
+                            margin: 0;
+                            margin-bottom: $m-S;
+                        }
+                    }
+                }
+            }
+            .result {
+                color: $primary-dark;
+                margin: $p-XXS 0;
+            }
+            table {
+                // margin-top: $m-S;
+                tr {
+                    cursor: pointer;
                 }
             }
         }
