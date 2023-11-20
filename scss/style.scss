@@ -37,6 +37,10 @@ body {
 
     main {
         padding-top: $p-XXS;
+        min-height: 72vh;
+        @include web-XL{
+            min-height: unset;
+        }
         @include pad {
             padding-top: 0;
         }
@@ -76,6 +80,7 @@ body {
         .content-calendar {
             .fullCalendar {
                 margin-top: $m-S;
+                margin-bottom: $m-M;
             }
             button {
                 background-color: $primary-default !important;
@@ -126,21 +131,6 @@ body {
                 .fc-toolbar-chunk:nth-child(3) {
                     text-align: right;
                 }
-                // .fc-header-toolbar {
-                //     display: flex;
-                //     justify-content: space-between;
-                //     // align-items: center;
-                //     flex-wrap: wrap;
-                //     // flex-direction: row;
-                // }
-                // .fc-toolbar-chunk:nth-child(2) {
-                //     font-size: $size-p;
-                //     margin: 0 $p-XS;
-                // }
-                // .fc-toolbar-chunk:nth-child(3) {
-                //     width: 100%;
-                //     text-align: right;
-                // }
                 .fc-toolbar-title {
                     width: 100%;
                     margin: $m-XS 0;
@@ -193,7 +183,7 @@ body {
                     }
                     @include mobile-L {
                         width: 48%;
-                        padding: 0;
+                        padding: $p-XXS;
                         margin-bottom: $m-S;
                     }
                     .top {
@@ -218,10 +208,17 @@ body {
                             font-size: $size-p;
                         }
                         p {
-                            line-height: 1.65;
+                            line-height: 1.75;
                         }
                     }
                 }
+            }
+            .w-100{
+               @include mobile-L{
+                button{
+                    width: 100%;
+                }
+               }
             }
         }
         // 訊息公告
@@ -254,7 +251,7 @@ body {
                 border-radius: 8px;
                 li {
                     list-style-position: inside;
-                    line-height: 1.75;
+                    line-height: 2;
                     .notice {
                         margin-left: $m-XS;
                     }
@@ -263,7 +260,7 @@ body {
             .text-gp {
                 margin-bottom: $m-M;
                 p {
-                    line-height: 1.75;
+                    line-height: 2;
                     margin-bottom: $p-XS;
                 }
                 h3 {
@@ -274,7 +271,7 @@ body {
                     list-style-position: inside;
                     li {
                         color: $text;
-                        line-height: 1.75;
+                        line-height: 2;
                     }
                 }
                 ul.file-gp {
@@ -334,7 +331,7 @@ body {
                     .text-gp {
                         margin-bottom: 0;
                         p {
-                            line-height: 1.75;
+                            line-height: 2;
                             margin-bottom: 0;
                             // @include pad {
                             //     line-height: 1.5;
@@ -342,6 +339,13 @@ body {
                         }
                     }
                 }
+            }
+            .w-100{
+               @include mobile-L{
+                button{
+                    width: 100%;
+                }
+               }
             }
         }
         // lightbox
@@ -353,7 +357,7 @@ body {
                 width: 25%;
                 margin: 0;
                 padding: 0;
-                margin-bottom: $m-S;
+                margin-bottom: $m-XS;
                 @include pad {
                     width: 33.3%;
                 }
@@ -466,7 +470,7 @@ body {
                         list-style-position: inside;
                         li {
                             text-align: left;
-                            line-height: 1.75;
+                            line-height: 2;
                         }
                     }
                 }
@@ -487,6 +491,9 @@ body {
                         a {
                             color: $text;
                             margin-right: $m-S;
+                            &:last-child {
+                                margin-right: 0;
+                            }
                             img {
                                 width: 20px;
                                 height: 20px;
@@ -499,9 +506,6 @@ body {
         }
     }
     // 彈出燈箱不在main架構裡
-    // .lightboxOverlay:focus{
-    //     border: unset !important;
-    // }
     .lightbox {
         &:focus {
             outline: unset !important;

@@ -2019,39 +2019,44 @@
                 display: none;
             }
         }
-        tr {
-            @include mobile-L {
-                display: block;
-                margin-bottom: $m-S !important;
-            }
-            &:nth-child(even) {
-                @include mobile-L {
-                    background-color: transparent;
+        tbody{
+            tr {
+                &:last-child{
+                    margin-bottom: 0 !important;
                 }
-            }
-            th {
-                background-color: rgba($color: $primary-default, $alpha: 1);
-                color: white;
-                text-align: center;
-            }
-            td {
                 @include mobile-L {
                     display: block;
-                    flex-wrap: wrap;
-                    text-align: left;
-                    line-height: 1.75;
-                    &::before {
-                        width: 100%;
-                        display: block;
-                        content: attr(data-title);
-                        font-weight: bold;
-                        font-size: $size-p;
-                        text-align: left;
-                        color: black;
-                        margin-bottom: $m-XXS;
+                    margin-bottom: $m-S !important;
+                }
+                &:nth-child(even) {
+                    @include mobile-L {
+                        background-color: transparent;
                     }
-                    &:nth-child(odd) {
-                        background-color: rgba($color: $primary-tint, $alpha: 0.1);
+                }
+                th {
+                    background-color: rgba($color: $primary-default, $alpha: 1);
+                    color: white;
+                    text-align: center;
+                }
+                td {
+                    @include mobile-L {
+                        display: block;
+                        flex-wrap: wrap;
+                        text-align: left;
+                        line-height: 1.75;
+                        &::before {
+                            width: 100%;
+                            display: block;
+                            content: attr(data-title);
+                            font-weight: bold;
+                            font-size: $size-p;
+                            text-align: left;
+                            color: black;
+                            margin-bottom: $m-XXS;
+                        }
+                        &:nth-child(odd) {
+                            background-color: rgba($color: $primary-tint, $alpha: 0.1);
+                        }
                     }
                 }
             }

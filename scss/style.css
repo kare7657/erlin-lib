@@ -1621,30 +1621,33 @@ body .table-default tr .btn-primary {
     display: none;
   }
 }
+body .mb-separate tbody tr:last-child {
+  margin-bottom: 0 !important;
+}
 @media (max-width: 568px) {
-  body .mb-separate tr {
+  body .mb-separate tbody tr {
     display: block;
     margin-bottom: 20px !important;
   }
 }
 @media (max-width: 568px) {
-  body .mb-separate tr:nth-child(even) {
+  body .mb-separate tbody tr:nth-child(even) {
     background-color: transparent;
   }
 }
-body .mb-separate tr th {
+body .mb-separate tbody tr th {
   background-color: #c53c18;
   color: white;
   text-align: center;
 }
 @media (max-width: 568px) {
-  body .mb-separate tr td {
+  body .mb-separate tbody tr td {
     display: block;
     flex-wrap: wrap;
     text-align: left;
     line-height: 1.75;
   }
-  body .mb-separate tr td::before {
+  body .mb-separate tbody tr td::before {
     width: 100%;
     display: block;
     content: attr(data-title);
@@ -1654,7 +1657,7 @@ body .mb-separate tr th {
     color: black;
     margin-bottom: 4px;
   }
-  body .mb-separate tr td:nth-child(odd) {
+  body .mb-separate tbody tr td:nth-child(odd) {
     background-color: rgba(240, 156, 134, 0.1);
   }
 }
@@ -2025,6 +2028,12 @@ body .breadcrumb .container ul span {
 }
 body main {
   padding-top: 8px;
+  min-height: 72vh;
+}
+@media (max-width: 1536px) {
+  body main {
+    min-height: unset;
+  }
 }
 @media (max-width: 768px) {
   body main {
@@ -2066,6 +2075,7 @@ body main h2 i {
 }
 body main .content-calendar .fullCalendar {
   margin-top: 20px;
+  margin-bottom: 36px;
 }
 body main .content-calendar button {
   background-color: #C53C18 !important;
@@ -2173,7 +2183,7 @@ body main .content-newbook .new-book-gp .block {
 @media (max-width: 568px) {
   body main .content-newbook .new-book-gp .block {
     width: 48%;
-    padding: 0;
+    padding: 8px;
     margin-bottom: 20px;
   }
 }
@@ -2200,7 +2210,12 @@ body main .content-newbook .new-book-gp .block .bottom .title {
   font-size: 1rem;
 }
 body main .content-newbook .new-book-gp .block .bottom p {
-  line-height: 1.65;
+  line-height: 1.75;
+}
+@media (max-width: 568px) {
+  body main .content-newbook .w-100 button {
+    width: 100%;
+  }
 }
 body main .content-news h2 {
   text-align: justify;
@@ -2231,7 +2246,7 @@ body main .content-news .activity-gp {
 }
 body main .content-news .activity-gp li {
   list-style-position: inside;
-  line-height: 1.75;
+  line-height: 2;
 }
 body main .content-news .activity-gp li .notice {
   margin-left: 12px;
@@ -2240,7 +2255,7 @@ body main .content-news .text-gp {
   margin-bottom: 36px;
 }
 body main .content-news .text-gp p {
-  line-height: 1.75;
+  line-height: 2;
   margin-bottom: 16px;
 }
 body main .content-news .text-gp h3 {
@@ -2252,7 +2267,7 @@ body main .content-news .text-gp ul {
 }
 body main .content-news .text-gp ul li {
   color: #595757;
-  line-height: 1.75;
+  line-height: 2;
 }
 body main .content-news .text-gp ul.file-gp {
   padding-left: 0;
@@ -2325,8 +2340,13 @@ body main .content-news .info-gp .right .text-gp {
   margin-bottom: 0;
 }
 body main .content-news .info-gp .right .text-gp p {
-  line-height: 1.75;
+  line-height: 2;
   margin-bottom: 0;
+}
+@media (max-width: 568px) {
+  body main .content-news .w-100 button {
+    width: 100%;
+  }
 }
 body main .section-lightbox {
   display: flex;
@@ -2337,7 +2357,7 @@ body main .section-lightbox .block {
   width: 25%;
   margin: 0;
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 @media (max-width: 768px) {
   body main .section-lightbox .block {
@@ -2453,7 +2473,7 @@ body main .content-about table tr ul {
 }
 body main .content-about table tr ul li {
   text-align: left;
-  line-height: 1.75;
+  line-height: 2;
 }
 body main .content-download table {
   margin: 20px 0;
@@ -2471,6 +2491,9 @@ body main .content-download table td .link-gp {
 body main .content-download table td .link-gp a {
   color: #595757;
   margin-right: 20px;
+}
+body main .content-download table td .link-gp a:last-child {
+  margin-right: 0;
 }
 body main .content-download table td .link-gp a img {
   width: 20px;
