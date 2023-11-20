@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta place-name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二林圖書館-表單下載</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="scss/bootstrap.min.css">
+    <!-- lightbox -->
+    <link rel="stylesheet" href="scss/lightbox.min.css">
+    <!-- css -->
+    <link rel="stylesheet" href="scss/style.css">
+
+</head>
+
+<body>
+    <!-- header -->
+    <header id="header"></header>
+
+    <main>
+        <a href="#C" title="中央內容區塊" id="AC" accesskey="C"></a>
+        <!-- breadcrumb -->
+        <div class="breadcrumb">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+                    <li>></li>
+                    <li><span>表單下載</span></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 表單下載 -->
+        <section class="content-download">
+            <div class="container">
+                <h2><i class="fas fa-book"></i>表單下載</h2>
+                <div class="text-gp">
+                    <!-- mb-separate -->
+                    <table class="table-default mb-separate" summary="資料上傳，第一欄為項目，第二欄為格式，第三欄為上傳檔案">
+                        <thead>
+                            <tr>
+                                <th scope="col" id="date" style="width: 20%;">日期</th>
+                                <th scope="col" id="title" style="width: 50%;">標題</th>
+                                <th scope="col" id="link" style="width: 30%;">下載連結</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td headers="date" data-title="日期">111-08-05</td>
+                                <td headers="title" data-title="標題">二林鎮立圖書館-個人借閱證申請</td>
+                                <td headers="link" data-title="下載連結">
+                                    <div class="link-gp">
+                                        <a href="" download><img src="img/pdf.svg"
+                                                alt="[檔案下載]二林鎮立圖書館-個人借閱證申請pdf">pdf</a>
+                                        <a href="" download><img src="img/odt.svg"
+                                                alt="[檔案下載]二林鎮立圖書館-個人借閱證申請odt">odt</a>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td headers="date" data-title="日期">111-08-05</td>
+                                <td headers="title" data-title="標題">二林鎮立圖書館-家庭借閱證申請單</td>
+                                <td headers="link" data-title="下載連結">
+                                    <div class="link-gp">
+                                        <a href="" download><img src="img/pdf.svg"
+                                                alt="[檔案下載]二林鎮立圖書館-家庭借閱證申請單pdf">pdf</a>
+                                        <a href="" download><img src="img/odt.svg"
+                                                alt="[檔案下載]二林鎮立圖書館-家庭借閱證申請單odt">odt</a>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td headers="date" data-title="日期">111-08-05</td>
+                                <td headers="title" data-title="標題">二林鎮立圖書館-借閱證代辦委託書</td>
+                                <td headers="link" data-title="下載連結">
+                                    <div class="link-gp">
+                                        <a href="" download><img src="img/pdf.svg"
+                                                alt="[檔案下載]二林鎮立圖書館-借閱證代辦委託書pdf">pdf</a>
+                                        <a href="" download><img src="img/odt.svg"
+                                                alt="[檔案下載]二林鎮立圖書館-借閱證代辦委託書odt">odt</a>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td headers="date" data-title="日期">111-08-05</td>
+                                <td headers="title" data-title="標題">二林鎮立圖書館-圖書資料代借委託書</td>
+                                <td headers="link" data-title="下載連結">
+                                    <div class="link-gp">
+                                        <a href="" download><img src="img/pdf.svg"
+                                                alt="[檔案下載]二林鎮立圖書館-圖書資料代借委託書pdf">pdf</a>
+                                        <a href="" download><img src="img/odt.svg"
+                                                alt="[檔案下載]二林鎮立圖書館-圖書資料代借委託書odt">odt</a>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td headers="date" data-title="日期">111-08-05</td>
+                                <td headers="title" data-title="標題">二林鎮立圖書館-志願服務家長同意書</td>
+                                <td headers="link" data-title="下載連結">
+                                    <div class="link-gp">
+                                        <a href="" download><img src="img/pdf.svg"
+                                                alt="[檔案下載]二林鎮立圖書館-志願服務家長同意書pdf">pdf</a>
+                                        <a href="" download><img src="img/odt.svg"
+                                                alt="[檔案下載]二林鎮立圖書館-志願服務家長同意書odt">odt</a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer id="footer"></footer>
+
+    <!-- jquery -->
+    <script src="js/jquery-min.js"></script>
+
+    <!-- bootstrap -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- lightbox -->
+    <script src="js/lightbox.min.js"></script>
+
+    <!-- 引入html header&footer -->
+    <script>
+        $(function () {
+            $("#header").load('header.html');
+            $("#footer").load("footer.html");
+        });
+    </script>
+
+    <!-- 最新消息list -->
+    <script>
+        var btn1 = document.querySelector(".btn1")
+        var btn2 = document.querySelector(".btn2")
+        var list1 = document.querySelector(".list1")
+        var list2 = document.querySelector(".list2")
+        function clear_active() {
+            btn1.classList.remove("active-btn")
+            btn2.classList.remove("active-btn")
+            list1.classList.remove("active-list")
+            list2.classList.remove("active-list")
+        }
+        btn1.onclick = function () {
+            clear_active()
+            btn1.classList.add("active-btn")
+            list1.classList.add("active-list")
+        }
+        btn2.onclick = function () {
+            clear_active()
+            btn2.classList.add("active-btn")
+            list2.classList.add("active-list")
+        }
+    </script>
+
+    <!-- lightbox -->
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+        })
+    </script>
+
+
+</body>
+
+</html>

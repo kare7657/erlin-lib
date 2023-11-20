@@ -144,7 +144,7 @@
         color: $text;
         padding: 0;
         margin: 0;
-        line-height: 1.5;
+        line-height: 2;
         font-weight: normal;
         text-align: justify;
         word-wrap: break-word;
@@ -1842,6 +1842,9 @@
                 margin-right: $p-XXS;
             }
         }
+        p {
+            line-height: 1.75;
+        }
     }
     .head {
         background-color: $primary-default;
@@ -1968,6 +1971,9 @@
             // border: 1px solid $primary-tint;
             padding: $p-XS;
             text-align: center;
+            @include mobile-L() {
+                padding: $m-XS $p-XS;
+            }
         }
         tr {
             &:nth-child(even) {

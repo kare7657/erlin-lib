@@ -187,6 +187,7 @@ body {
                 .block {
                     width: 20%;
                     padding: $p-XS;
+                    margin-bottom: $m-XS;
                     @include pad {
                         width: 33%;
                     }
@@ -209,11 +210,15 @@ body {
                     }
                     .bottom {
                         // padding: 0 $p-XXS;
+                        padding-top: $m-XXS;
                         .title {
                             color: $text;
                             font-weight: bold;
                             margin-bottom: $p-XXS;
                             font-size: $size-p;
+                        }
+                        p {
+                            line-height: 1.65;
                         }
                     }
                 }
@@ -221,6 +226,9 @@ body {
         }
         // 訊息公告
         .content-news {
+            h2 {
+                text-align: justify;
+            }
             .post-gp {
                 margin-top: $m-XS;
                 display: flex;
@@ -239,6 +247,18 @@ body {
             }
             hr {
                 margin-bottom: $m-S;
+            }
+            .activity-gp {
+                background-color: $primary-table;
+                padding: $p-S;
+                border-radius: 8px;
+                li {
+                    list-style-position: inside;
+                    line-height: 1.75;
+                    .notice {
+                        margin-left: $m-XS;
+                    }
+                }
             }
             .text-gp {
                 margin-bottom: $m-M;
@@ -369,7 +389,10 @@ body {
                 border-radius: 12px;
                 margin-top: $m-S;
                 margin-bottom: $m-M;
-                @include mobile-L{
+                @include web-L {
+                    padding: $p-M $p-L;
+                }
+                @include mobile-L {
                     padding: $p-S;
                 }
                 .form-gp {
@@ -378,27 +401,27 @@ body {
                     margin-bottom: $m-XS;
                     label {
                         width: 20%;
-                        @include mobile-L{
+                        @include mobile-L {
                             width: 100%;
                         }
                     }
                     input {
                         width: 80%;
-                        @include mobile-L{
+                        @include mobile-L {
                             width: 100%;
                         }
                     }
                 }
                 .btn-tool {
                     text-align: center;
-                    @include mobile-L{
+                    @include mobile-L {
                         margin-top: $m-S;
                         display: flex;
                         justify-content: space-between;
                     }
                     input {
                         margin: 0 $m-XXS;
-                        @include mobile-L{
+                        @include mobile-L {
                             width: 47%;
                             margin: 0;
                             margin-bottom: $m-S;
@@ -414,6 +437,63 @@ body {
                 // margin-top: $m-S;
                 tr {
                     cursor: pointer;
+                }
+            }
+        }
+        // 關於我們
+        .content-about {
+            h3 {
+                margin-bottom: $m-XS;
+            }
+            .text-gp {
+                margin-top: $m-S;
+                margin-bottom: $m-M;
+                p {
+                    margin-bottom: $m-S;
+                }
+            }
+            table {
+                tr {
+                    // td:first-child{
+                    //     text-align: left;
+                    // }
+                    td:last-child {
+                        text-align: left;
+                    }
+                    ul {
+                        margin-bottom: 0;
+                        padding-left: 0;
+                        list-style-position: inside;
+                        li {
+                            text-align: left;
+                            line-height: 1.75;
+                        }
+                    }
+                }
+            }
+        }
+        // 表單下載
+        .content-download {
+            table {
+                margin: $m-S 0;
+                td {
+                    .link-gp {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        @include mobile-L {
+                            justify-content: start;
+                        }
+                        a {
+                            color: $text;
+                            margin-right: $m-S;
+                            img {
+                                width: 20px;
+                                height: 20px;
+                                margin-right: $m-XXS;
+                            }
+                        }
+                    }
                 }
             }
         }
