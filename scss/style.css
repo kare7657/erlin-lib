@@ -2156,7 +2156,7 @@ body main .content-calendar table td .fc-daygrid-day-number {
 body main .content-newbook .new-book-gp {
   margin: 12px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   flex-wrap: wrap;
 }
 @media (max-width: 768px) {
@@ -2194,11 +2194,17 @@ body main .content-newbook .new-book-gp .block .top {
   text-align: center;
 }
 body main .content-newbook .new-book-gp .block .top img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 85%;
-  height: 85%;
-  max-height: 220px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 155px;
+  height: 200px;
+}
+@media (max-width: 568px) {
+  body main .content-newbook .new-book-gp .block .top img {
+    width: 100%;
+    height: 100%;
+    max-height: 170px;
+  }
 }
 body main .content-newbook .new-book-gp .block .bottom {
   padding-top: 4px;

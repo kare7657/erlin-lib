@@ -165,7 +165,7 @@ body {
             .new-book-gp {
                 margin: $m-XS 0;
                 display: flex;
-                justify-content: space-between;
+                justify-content: start;
                 flex-wrap: wrap;
                 @include pad {
                     justify-content: start;
@@ -192,10 +192,14 @@ body {
                         display: block;
                         text-align: center;
                         img {
-                            object-fit: cover;
-                            width: 85%;
-                            height: 85%;
-                            max-height: 220px;
+                            object-fit: contain;
+                            width: 155px;
+                            height: 200px;
+                            @include mobile-L{
+                                width: 100%;
+                                height: 100%;
+                                max-height: 170px;
+                            }
                         }
                     }
                     .bottom {
